@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2020/7/19 11:48
 # @Author  : shaonianlang
-# @File    : test_api.py
+# @File    : test_method_86.py
 
 from time import sleep
 from selenium import webdriver
@@ -45,7 +45,7 @@ class TestAddStudent:
         self.test_login()
         self.driver.find_elements(By.XPATH, "//*[@class='btn btn-primary pull-right']")[0].click()
         self.driver.find_element(By.XPATH, "//*[@href='#user']").click()
-        # WebDriverWait(self.driver, 10).until(expected_conditions.element_to_be_clickable((By.ID, 'addNew')))
+        WebDriverWait(self.driver, 10).until(expected_conditions.element_to_be_clickable((By.ID, 'addNew')))
         self.driver.find_element(By.ID, 'addNew').click()
 
     def test_action_chains(self):
@@ -58,6 +58,7 @@ class TestAddStudent:
     def test_double_click(self):
         self.test_login()
         self.driver.find_elements(By.XPATH, "//*[@class='btn btn-primary pull-right']")[0].click()
+        # WebDriverWait(self.driver, 10).until(expected_conditions.element_to_be_clickable((By.XPATH, "//*[@href='#user']")))
         self.driver.find_element(By.XPATH, "//*[@href='#user']").click()
         sleep(3)
         countrywide = self.driver.find_element(By.XPATH, "//*[@class='ztree no-padding']/li/a")
